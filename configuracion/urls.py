@@ -21,5 +21,6 @@ urlpatterns = [
     #path("pato/", include("pato.urls")),
     path("", include("inicio.urls")), #sin valor para que sea la pagina principal
     path('admin/', admin.site.urls),
-    path("rutas/", include("rutas.urls"))
+    path("rutas/", include("rutas.urls")),
+    path("cursos/", include("cursos.urls"))
 ]
