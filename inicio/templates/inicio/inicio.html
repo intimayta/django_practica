@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+
+
+{% block titulo %}Inicio 2026{% endblock %}
+
+{% block contenido %}
+  <h2>Bienvenido 👋</h2>
+
+  <p>
+    Hoy aprenderás <b>Templates</b>: variables, tags y herencia.
+  </p>
+
+  <p class="muted">
+    Fecha/hora (desde la vista): <b>{{ ahora|date:"d/m/Y H:i" }}</b>
+  </p>
+
+  <h3>Lenguajes de programacion</h3>
+  <p style ="color:red;">Variable {{ variable}}</p>
+  <ul>
+    {% for tema in lenguajes %}
+      <li>{{ tema }}</li>
+    {% empty %}  
+    <p>No hay registros en esta tabla</p>
+    {% endfor %}
+  </ul>
+
+  {% if estado == "rechazado" %}
+    <p style ="color:red;">rechazado</p>
+  {% elif estado == "pendiente"%}
+    <p style ="color:green;">pendiente</p>
+  {% elif estado == "proceso"%}
+    <p style ="color:orange;">proceso</p>
+  {% elif estado == "completado"%}
+    <p style ="color:pink;">completado</p>
+  
+    {% endif %}
+{% endblock %}
